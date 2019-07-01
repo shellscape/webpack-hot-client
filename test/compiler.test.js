@@ -5,7 +5,7 @@ const {
   hotEntry,
   modifyCompiler,
   validateCompiler,
-  validateEntry,
+  validateEntry
 } = require('../lib/compiler');
 const HotClientError = require('../lib/HotClientError');
 const getOptions = require('../lib/options');
@@ -77,7 +77,7 @@ describe('compiler', () => {
   test('addEntry: object', () => {
     const entry = {
       a: ['index-a.js'],
-      b: ['index-b.js'],
+      b: ['index-b.js']
     };
     const entries = addEntry(entry, compilerName, options);
     expect(entries).toMatchSnapshot();
@@ -86,7 +86,7 @@ describe('compiler', () => {
   test('addEntry: object, allEntries: true', () => {
     const entry = {
       a: ['index-a.js'],
-      b: ['index-b.js'],
+      b: ['index-b.js']
     };
     const opts = getOptions({ allEntries: true });
     const entries = addEntry(entry, compilerName, opts);

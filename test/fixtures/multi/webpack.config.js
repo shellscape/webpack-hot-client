@@ -4,29 +4,29 @@ module.exports = [
   {
     resolve: {
       alias: {
-        'webpack-hot-client/client': resolve(__dirname, '../../../lib/client'),
-      },
+        'webpack-hot-client/client': resolve(__dirname, '../../../lib/client')
+      }
     },
     context: __dirname,
     entry: [resolve(__dirname, './client.js')],
     mode: 'development',
     output: {
       filename: './output.client.js',
-      path: resolve(__dirname),
-    },
+      path: resolve(__dirname)
+    }
   },
   {
     resolve: {
       alias: {
-        'webpack-hot-client/client': resolve(__dirname, '../../../lib/client'),
-      },
+        'webpack-hot-client/client': resolve(__dirname, '../../../lib/client')
+      }
     },
     context: __dirname,
     entry: [resolve(__dirname, './server.js')],
     mode: 'development',
     output: {
       filename: './output.server.js',
-      path: resolve(__dirname),
-    },
-  },
+      path: resolve(__dirname)
+    }
+  }
 ];

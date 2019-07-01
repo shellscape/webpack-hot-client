@@ -158,6 +158,7 @@ Object {
     "web",
   ],
   "webSocket": Object {
+    "host": "localhost",
     "port": Any<Number>,
   },
 }

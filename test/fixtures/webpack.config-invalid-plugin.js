@@ -6,8 +6,8 @@ const webpack = require('webpack');
 module.exports = {
   resolve: {
     alias: {
-      'webpack-hot-client/client': path.resolve(__dirname, '../../client'),
-    },
+      'webpack-hot-client/client': path.resolve(__dirname, '../../client')
+    }
   },
   context: __dirname,
   devtool: 'source-map',
@@ -15,11 +15,11 @@ module.exports = {
   // mode: 'development',
   output: {
     filename: 'output.js',
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname)
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new TimeFixPlugin(),
-  ],
+    new TimeFixPlugin()
+  ]
 };
