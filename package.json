@@ -75,7 +75,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "expect": "^24.8.0",
     "husky": "^2.7.0",
-    "jest": "^23.0.1",
+    "jest": "^24.8.0",
     "jest-serializer-path": "^0.1.15",
     "killable": "^1.0.0",
     "lint-staged": "^8.2.1",
