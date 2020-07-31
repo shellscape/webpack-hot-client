@@ -23,7 +23,7 @@ describe('compiler', () => {
   });
 
   test('validateEntry: object', () => {
-    const result = validateEntry({ a: [], b: [] });
+    const result = validateEntry({ a: { import: [] }, b: { import: [] } });
     expect(result).toBe(true);
   });
 
@@ -76,8 +76,8 @@ describe('compiler', () => {
 
   test('addEntry: object', () => {
     const entry = {
-      a: ['index-a.js'],
-      b: ['index-b.js']
+      a: { import: ['index-a.js'] },
+      b: { import: ['index-b.js'] }
     };
     const entries = addEntry(entry, compilerName, options);
     expect(entries).toMatchSnapshot();

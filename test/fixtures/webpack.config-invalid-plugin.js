@@ -9,6 +9,9 @@ module.exports = {
       'webpack-hot-client/client': path.resolve(__dirname, '../../client')
     }
   },
+  optimization: {
+    moduleIds: 'deterministic'
+  },
   context: __dirname,
   devtool: 'source-map',
   entry: [path.resolve(__dirname, './app.js')],
@@ -17,9 +20,5 @@ module.exports = {
     filename: 'output.js',
     path: path.resolve(__dirname)
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new TimeFixPlugin()
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin(), new TimeFixPlugin()]
 };

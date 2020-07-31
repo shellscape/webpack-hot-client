@@ -89,7 +89,7 @@
     "standard-version": "^6.0.1",
     "time-fix-plugin": "^2.0.0",
     "touch": "^3.1.0",
-    "webpack": "^4.35.2"
+    "webpack": "^5.0.0-beta.22"
   },
   "keywords": [
     "webpack"
