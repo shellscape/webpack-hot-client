@@ -1,5 +1,7 @@
 const { resolve } = require('path');
 
+const webpack = require('webpack');
+
 module.exports = [
   {
     resolve: {
@@ -13,7 +15,8 @@ module.exports = [
     output: {
       filename: './output.client.js',
       path: resolve(__dirname)
-    }
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin()]
   },
   {
     resolve: {
@@ -27,6 +30,7 @@ module.exports = [
     output: {
       filename: './output.server.js',
       path: resolve(__dirname)
-    }
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin()]
   }
 ];

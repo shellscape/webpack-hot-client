@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   resolve: {
@@ -13,5 +14,9 @@ module.exports = {
   output: {
     filename: 'output.js',
     path: path.resolve(__dirname, 'output')
-  }
+  },
+  optimization: {
+    moduleIds: 'named'
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };

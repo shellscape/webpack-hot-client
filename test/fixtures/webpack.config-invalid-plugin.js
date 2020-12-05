@@ -17,9 +17,8 @@ module.exports = {
     filename: 'output.js',
     path: path.resolve(__dirname)
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new TimeFixPlugin()
-  ]
+  optimization: {
+    moduleIds: 'deterministic'
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new TimeFixPlugin()]
 };

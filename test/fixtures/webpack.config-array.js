@@ -1,7 +1,7 @@
 const path = require('path');
 
-const TimeFixPlugin = require('time-fix-plugin');
 const webpack = require('webpack');
+const TimeFixPlugin = require('time-fix-plugin');
 
 module.exports = {
   resolve: {
@@ -17,5 +17,8 @@ module.exports = {
     filename: './output.js',
     path: path.resolve(__dirname)
   },
-  plugins: [new webpack.NamedModulesPlugin(), new TimeFixPlugin()]
+  optimization: {
+    moduleIds: 'deterministic'
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new TimeFixPlugin()]
 };

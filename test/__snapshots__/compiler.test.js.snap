@@ -35,7 +35,7 @@ Object {
 
 exports[`compiler addEntry: object, allEntries: true 1`] = `
 Object {
-  "a": Array [
+  "a": Object  [
     "webpack-hot-client/client?test",
     "index-a.js",
   ],

@@ -7,7 +7,6 @@ const {
   validateCompiler,
   validateEntry
 } = require('../lib/compiler');
-const HotClientError = require('../lib/HotClientError');
 const getOptions = require('../lib/options');
 
 const compilerName = 'test';
@@ -23,7 +22,7 @@ describe('compiler', () => {
   });
 
   test('validateEntry: object', () => {
-    const result = validateEntry({ a: [], b: [] });
+    const result = validateEntry({ a: { import: [] }, b: { import: [] } });
     expect(result).toBe(true);
   });
 
@@ -33,7 +32,7 @@ describe('compiler', () => {
   });
 
   test('validateEntry: object, string', () => {
-    const t = () => validateEntry({ a: [], b: '' });
+    const t = () => validateEntry({ a: { import: [] }, b: '' });
     expect(t).toThrow(TypeError);
   });
 
@@ -47,13 +46,6 @@ describe('compiler', () => {
     const compiler = webpack(config);
     const result = validateCompiler(compiler);
     expect(result).toBe(true);
-  });
-
-  test('validateCompiler: HotModuleReplacementPlugin', () => {
-    const config = getConfig('invalid-plugin');
-    const compiler = webpack(config);
-    const t = () => validateCompiler(compiler);
-    expect(t).toThrow(HotClientError);
   });
 
   test('addEntry: array', () => {
@@ -85,8 +77,12 @@ describe('compiler', () => {
 
   test('addEntry: object, allEntries: true', () => {
     const entry = {
-      a: ['index-a.js'],
-      b: ['index-b.js']
+      a: {
+        import: ['index-a.js']
+      },
+      b: {
+        import: ['index-b.js']
+      }
     };
     const opts = getOptions({ allEntries: true });
     const entries = addEntry(entry, compilerName, opts);
