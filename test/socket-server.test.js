@@ -95,7 +95,7 @@ describe('socket server', () => {
       context: process.cwd(),
       toJson: () => {
         return { hash: '111111', warnings: [] };
-      },
+      }
     };
     const opts = getOptions({ logLevel: 'silent', stats });
     const server = getServer(opts);
@@ -133,7 +133,7 @@ describe('socket server', () => {
 
       catcher.on('open', () => {
         send({
-          errors: ['test error'],
+          errors: ['test error']
         });
       });
     });
@@ -158,7 +158,7 @@ describe('socket server', () => {
       catcher.on('open', () => {
         send({
           hash: '000000',
-          warnings: [],
+          warnings: []
         });
       });
     });
@@ -179,7 +179,7 @@ describe('socket server', () => {
 
       catcher.on('open', () => {
         send({
-          assets: [{ emitted: false }],
+          assets: [{ emitted: false }]
         });
       });
     });
@@ -204,7 +204,7 @@ describe('socket server', () => {
       catcher.on('open', () => {
         send({
           hash: '000000',
-          warnings: ['test warning'],
+          warnings: ['test warning']
         });
       });
     });

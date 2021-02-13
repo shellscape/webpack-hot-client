@@ -11,8 +11,8 @@ describe('options', () => {
     const options = getOptions();
     expect(options).toMatchSnapshot({
       stats: {
-        context: expect.stringMatching(/(webpack-hot-client|project)$/),
-      },
+        context: expect.stringMatching(/(webpack-hot-client|project)$/)
+      }
     });
   });
 
@@ -22,7 +22,7 @@ describe('options', () => {
       autoConfigure: false,
       host: {
         client: 'localhost',
-        server: 'localhost',
+        server: 'localhost'
       },
       hmr: false,
       https: true,
@@ -32,17 +32,17 @@ describe('options', () => {
       reload: false,
       send: {
         errors: false,
-        warnings: false,
+        warnings: false
       },
       // this property is tested later
       // server: null,
       stats: {
-        context: '/',
+        context: '/'
       },
       validTargets: ['batman'],
       // we pass this to force the log instance to be unique, to assert log
       // option differences
-      test: true,
+      test: true
     };
     const options = getOptions(altered);
     // console.log(JSON.stringify(options, null, 2));
@@ -61,8 +61,8 @@ describe('options', () => {
         server: expect.any(https.Server),
         webSocket: {
           host: '::',
-          port: expect.any(Number),
-        },
+          port: expect.any(Number)
+        }
       });
       server.kill(done);
     });
@@ -80,8 +80,8 @@ describe('options', () => {
         server: expect.any(https.Server),
         webSocket: {
           host: '::',
-          port: expect.any(Number),
-        },
+          port: expect.any(Number)
+        }
       });
       server.kill(done);
     });
